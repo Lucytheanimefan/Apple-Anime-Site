@@ -1,17 +1,21 @@
 {% extends "genLayout.html" %} 
 
  {% block css %} 
-<link rel="icon" href="{{ url_for('static', filename='css/style.css') }}" type="image/x-icon" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"/>
 
  {% endblock %}
 {% block body %}
 
-<div>Anime @ Apple</div>
-<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/fzQ6gRAEoy0" frameborder="0" allowfullscreen></iframe>-->
+<div id="mainVideo">
+<img id = "imac" class = "animescreen" src="/static/img/imac.png">
+<iframe id = "youtube" class = "animescreen" width="277" height="170" src="https://www.youtube.com/embed/fzQ6gRAEoy0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 {% endblock %}
 
 {% block scripts %}
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
 
  {% endblock %}

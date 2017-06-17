@@ -1,3 +1,28 @@
-body{
-	background-color: black !important;
+body {
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+}
+
+#mainVideo {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.animescreen{
+	margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#imac {
+    position: absolute;
+}
+
+#youtube {
+    position: absolute;
+    padding-left: 5px;
+    padding-right: 5px;
 }
