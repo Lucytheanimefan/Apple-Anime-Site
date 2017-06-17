@@ -11,7 +11,16 @@
 </head>
 
 <body>
+<!--
+    <div class="navbar">
+        <a href="https://www.apple.com/"></a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+    </div>
+    -->
+    <div class="main">
     {% block body %}{% endblock %}
+    </div>
     <script type="text/javascript" src="{{ url_for('static', filename='plugins/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='plugins/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='plugins/anime.min.js') }}"></script>
