@@ -13,5 +13,7 @@ $(document).ready(function() {
     var iframePadding = ($("#imac").width() - iframeWidth) / 2;
     $("#youtube").css({ "width": iframeWidth, "height": iframeHeight, "padding-left": iframePadding, "padding-right": iframePadding });
 
+    
+
 
 })
