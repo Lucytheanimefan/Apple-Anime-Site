@@ -1,0 +1,17 @@
+{% extends "genLayout.html" %} 
+
+ {% block css %} 
+<link rel="icon" href="{{ url_for('static', filename='css/style.css') }}" type="image/x-icon" />
+
+ {% endblock %}
+{% block body %}
+
+<div>Anime @ Apple</div>
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/fzQ6gRAEoy0" frameborder="0" allowfullscreen></iframe>-->
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+ {% endblock %}

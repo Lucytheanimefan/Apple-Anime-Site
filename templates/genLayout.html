@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anime @ Apple</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='plugins/bootstrap.min.css') }}"> {% block css %} {% endblock %}
+</head>
+
+<body>
+    {% block body %}{% endblock %}
+    <script type="text/javascript" src="{{ url_for('static', filename='plugins/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='plugins/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='plugins/anime.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/customGraphicsLib.js') }}"></script>
+    {% block scripts %} {% endblock %}
+</body>
+
+</html>
