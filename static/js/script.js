@@ -4,19 +4,45 @@ var imacScreenRatio = 1.71; //width by height
 
 
 $(document).ready(function() {
-    var imacHeight = height * 0.85;
-    var iframeHeight = imacHeight * imacRatio;
-    var iframeWidth = iframeHeight * imacScreenRatio;
-    var imacScreenHeight = imacHeight * 0.75;
+    imacHeight = height * 0.85;
+    iframeHeight = imacHeight * imacRatio;
+    iframeWidth = iframeHeight * imacScreenRatio;
+    imacScreenHeight = imacHeight * 0.75;
     $("#imac").css("height", imacHeight + "px");
     var imacWidth = $("#imac").width();
-     $("body").css("min-width",imacWidth);
+    $("body").css("min-width", imacWidth);
     var iframePadding = (imacWidth - iframeWidth) / 2;
-    var iframePaddingTop = (imacScreenHeight - iframeHeight)/2;
-    $("#youtube").css({ "width": iframeWidth, "height": iframeHeight, "padding-left": iframePadding, "padding-right": iframePadding, "padding-top":iframePaddingTop });
-    $("section").css("min-height",imacHeight+"px");
+    var iframePaddingTop = (imacScreenHeight - iframeHeight) / 2;
+
+    console.log(iframeWidth)
+    console.log(iframeHeight)
+
+    $("#youtube").css({ "width": iframeWidth+"px","padding-left": iframePadding, "padding-right": iframePadding, "padding-top": iframePaddingTop });
+    $("section").css("min-height", imacHeight + "px");
 
 
 
 
 })
+
+
+/* --- youtube ----*/
+var player, playing = false;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube', {
+        height: iframeHeight,
+        width: iframeWidth,
+        videoId: 'fzQ6gRAEoy0',
+        events: {
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+function onPlayerStateChange(event) {
+    if (!playing) {
+        alert('hi');
+        playing = true;
+    }
+}
