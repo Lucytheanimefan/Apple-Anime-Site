@@ -3,9 +3,13 @@ body {
     -webkit-box-pack: center;
     display: -webkit-box;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #FAFAFA;
 }
 
 
+section{
+	
+}
 
 /* navbar */
 
@@ -74,12 +78,6 @@ body {
   margin: 0;
 }
 
-/*------------------------------------*\
-    $MIXINS
-\*------------------------------------*/
-/*------------------------------------*\
-    $REST
-\*------------------------------------*/
 
 #iPhone{
 	position: relative;
@@ -89,12 +87,12 @@ span.iphone {
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 50em;
-  width: 24em;
+  height: 40em;
+  width: 19.2em;
   margin-left: -12em;
-  margin-top: -25em;
-  background-size: 24em 50em;
-  background-image: url("http://beta.rss-ems.com/download/iphone.png");
+  margin-top: -20em;
+  background-size: 19.2em 40em;
+  background-image: url("/static/img/iphone.png");
   background-repeat: no-repeat;
 }
 
@@ -149,8 +147,8 @@ ul li:nth-child(4n+4) {
     -webkit-transform: rotate(-180deg);
     top: 50%;
     left: 50%;
-    width: 20em;
-    height: 35em;
+    width: 16em;
+    height: 32em;
     margin: -17.5em 0 0 -10em;
     border-radius: 0em;
   }
