@@ -4,10 +4,18 @@ var imacScreenRatio = 1.71; //width by height
 
 
 $(document).ready(function() {
+	//localStorage.clear();
     if (localStorage.getItem("visitedAnime@Apple") == null) {
         localStorage.setItem("visitedAnime@Apple", true);
     } else {
-    	mainPage();
+    	$(".phone").remove();
+    	$("#mainVideo").css("display","none");
+        $("#grid").css("display", "inline");
+        setTimeout(function() {
+        	$("#grid").fadeOut( "slow");
+            mainPage();
+        }, 3500);
+
     }
     imacHeight = height * 0.85;
     iframeHeight = imacHeight * imacRatio;
@@ -49,6 +57,7 @@ var shrinkSpeed = 300;
 
 function mainPage() {
     $(".phone").remove();
+    $("#mainVideo").css("display","block");
     $("#mainVideo").css("margin-top", "60px");
     $(".navbar").css({
         "display": "inline",
@@ -59,9 +68,11 @@ function mainPage() {
 function onPlayerStateChange(event) {
     console.log(event);
     if (!playing) {
-        if (localStorage.getItem("visitedAnime@Apple") == null) {
+    	console.log(localStorage.getItem("visitedAnime@Apple"));
+        //if (localStorage.getItem("visitedAnime@Apple") == null || ) {
+        	console.log("main page:")
             mainPage();
-        }
+        //}
         /*$("#grid").css("display", "inline");
         
         setTimeout(function() {
