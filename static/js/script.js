@@ -17,7 +17,7 @@ $(document).ready(function() {
     console.log(iframeWidth)
     console.log(iframeHeight)
 
-    $("#youtube").css({ "width": iframeWidth+"px","padding-left": iframePadding, "padding-right": iframePadding, "padding-top": iframePaddingTop });
+    $("#youtube").css({ "width": iframeWidth + "px", "padding-left": iframePadding, "padding-right": iframePadding, "padding-top": iframePaddingTop });
     $("section").css("min-height", imacHeight + "px");
 
 
@@ -40,9 +40,28 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
+var shrinkSpeed = 300;
+
 function onPlayerStateChange(event) {
+    console.log(event);
     if (!playing) {
-        alert('hi');
+    	$(".phone").remove();
+        $("#mainVideo").css("margin-top", "60px");
+        $(".navbar").css("display","inline");
+        /*$("#grid").css("display", "inline");
+        
+        setTimeout(function() {
+            $("#grid").animate({
+                left: "-=" + (shrinkSpeed*2),
+                top: "-=" + (shrinkSpeed - 240),
+                width: "-=" + shrinkSpeed*1.5,
+                height: "-=" + shrinkSpeed*1.5
+            }, 5000, function() {
+                // Animation complete.
+            });
+        }, 2000);
+*/
+
         playing = true;
     }
 }

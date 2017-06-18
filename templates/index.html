@@ -1,42 +1,59 @@
-{% extends "genLayout.html" %} 
-
- {% block css %} 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"/>
-
- {% endblock %}
-{% block body %}
-
-<section>
-<div id = "iPhone">
-<ul class="boxes">
-    <li>
-    <li>
-    <li>
-    <li>
-</ul>
-<span class="iphone"></span>
-</div>
+{% extends "genLayout.html" %} {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" /> {% endblock %} {% block body %}
+<section class="phone">
+    <div id="iPhone">
+        <ul class="boxes">
+            <li>
+                <li>
+                    <li>
+                        <li>
+        </ul>
+        <span class="iphone"></span>
+    </div>
+</section>
+<section class="mac">
+    <div id="mainVideo">
+        <img id="imac" class="animescreen" src="/static/img/imac.png">
+        <div class="animescreen" id="youtube"></div>
+    </div>
+     <div id="grid" class="animescreen">
+        <div class="container">
+            <div class="walls">
+                <div class="wall"></div>
+                <div class="wall"></div>
+                <div class="wall"></div>
+                <div class="wall"></div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="circles">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section>
-<div id="mainVideo">
-<img id = "imac" class = "animescreen" src="/static/img/imac.png">
-<!--<iframe id = "youtube" class = "animescreen" width="277" height="170" src="https://www.youtube.com/embed/fzQ6gRAEoy0" frameborder="0" allowfullscreen></iframe> -->
-
-
-    <div class = "animescreen" id="youtube"></div>
-
-
-
-</div>
-</section>
-
-{% endblock %}
-
-{% block scripts %}
+{% endblock %} {% block scripts %}
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
-
- {% endblock %}
+{% endblock %}
