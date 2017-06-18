@@ -4,15 +4,15 @@ var imacScreenRatio = 1.71; //width by height
 
 
 $(document).ready(function() {
-	//localStorage.clear();
+    localStorage.clear();
     if (localStorage.getItem("visitedAnime@Apple") == null) {
         localStorage.setItem("visitedAnime@Apple", true);
     } else {
-    	$(".phone").remove();
-    	$("#mainVideo").css("display","none");
+        $(".phone").remove();
+        $("#mainVideo").css("display", "none");
         $("#grid").css("display", "inline");
         setTimeout(function() {
-        	$("#grid").fadeOut( "slow");
+            $("#grid").fadeOut("slow");
             mainPage();
         }, 3500);
 
@@ -38,7 +38,20 @@ $(document).ready(function() {
 
 })
 
+/* watch */
+var appleWatch = $('.apple-watch');
 
+/*
+colorButton.on('click', function() {
+    var self = $(this),
+        color = self.attr('href');
+
+    appleWatch.css({
+        'color': color,
+        'background-color': color // Chrome currentColor update bug.
+    });
+});
+*/
 /* --- youtube ----*/
 var player, playing = false;
 
@@ -57,7 +70,7 @@ var shrinkSpeed = 300;
 
 function mainPage() {
     $(".phone").remove();
-    $("#mainVideo").css("display","block");
+    $("#mainVideo").css("display", "block");
     $("#mainVideo").css("margin-top", "60px");
     $(".navbar").css({
         "display": "inline",
@@ -68,10 +81,10 @@ function mainPage() {
 function onPlayerStateChange(event) {
     console.log(event);
     if (!playing) {
-    	console.log(localStorage.getItem("visitedAnime@Apple"));
+        console.log(localStorage.getItem("visitedAnime@Apple"));
         //if (localStorage.getItem("visitedAnime@Apple") == null || ) {
-        	console.log("main page:")
-            mainPage();
+        console.log("main page:")
+        mainPage();
         //}
         /*$("#grid").css("display", "inline");
         
