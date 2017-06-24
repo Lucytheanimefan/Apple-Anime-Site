@@ -12,7 +12,7 @@ def home():
 def get_od_credentials():
 	first_name = request.headers.get('X-AppleConnect-FirstName')
 	last_name = request.headers.get('X-AppleConnect-LastName')
-	return str(first_name) + " " + str(last_name)
+	return str(request.headers)#str(first_name) + " " + str(last_name)
 
 
 if __name__ == "__main__":
