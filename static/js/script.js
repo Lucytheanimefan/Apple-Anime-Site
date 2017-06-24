@@ -4,6 +4,7 @@ var imacScreenRatio = 1.71; //width by height
 
 
 $(document).ready(function() {
+	getName();
     localStorage.clear();
     if (localStorage.getItem("visitedAnime@Apple") == null) {
         localStorage.setItem("visitedAnime@Apple", true);
@@ -32,11 +33,16 @@ $(document).ready(function() {
 
     $("#youtube").css({ "width": iframeWidth + "px", "padding-left": iframePadding, "padding-right": iframePadding, "padding-top": iframePaddingTop });
     $("section").css("min-height", imacHeight + "px");
+});
 
+// get first & last name
+function getName() {
+    $.get("/credentials", function(data) {
+        console.log("The data: " + data);
 
+    });
+}
 
-
-})
 
 /* watch */
 var appleWatch = $('.apple-watch');
