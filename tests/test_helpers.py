@@ -1,7 +1,6 @@
-from mock import MagicMock, patch, call, ANY, mock_open, sentinel, PropertyMock
-from nose_parameterized import parameterized, param
-from nose.tools import raises, assert_equal, assert_true, assert_raises, assert_list_equal
-from os.path import join, dirname, abspath
+from mock import patch, call
+from nose.tools import assert_equal, assert_list_equal
+
 from tests import helpers
 
 
