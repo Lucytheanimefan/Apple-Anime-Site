@@ -28,11 +28,7 @@ class TestMalCoordinator(object):
             """:type: list[dict[string, object]]"""
 
         # assert
-        def top_anime_filter(entry):
-            return entry['status'] == 2 and entry['score'] == 10
 
-        def get_title(entry):
-            return entry['anime_title']
 
         expected_top_anime = {
             'Ouran Koukou Host Club',
@@ -45,7 +41,7 @@ class TestMalCoordinator(object):
             'Kimi no Na wa.'
         }
 
-        actual_top_anime = set(map(get_title, filter(top_anime_filter, actual_result)))
+        actual_top_anime = coordinator.filter_top_anime(actual_result)
 
         assert_set_equal(expected_top_anime, actual_top_anime)
 
