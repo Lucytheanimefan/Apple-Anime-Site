@@ -5,7 +5,7 @@ import coordinators
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/tkatzenbaer'
-db.init_app(app)
+# db.init_app(app)
 
 
 @app.route("/")
