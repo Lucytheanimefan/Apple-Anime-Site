@@ -1,7 +1,10 @@
 import os
 from flask import Flask, render_template, request, jsonify
+from commons import db
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/tkatzenbaer'
+db.init_app(app)
 
 
 @app.route("/")
