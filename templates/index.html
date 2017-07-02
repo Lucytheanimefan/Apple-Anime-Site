@@ -1,6 +1,5 @@
 {% extends "genLayout.html" %} {% block css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" /> 
-{% endblock %} {% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" /> {% endblock %} {% block body %}
 <section class="featured-product">
     <div class="gallery-head">
         <div class="gallery-header">
@@ -35,10 +34,32 @@
 </section>
 <section>
     <ul class="products">
-        <li class="product-block"></li>
-        <li class="product-block"></li>
-        <li class="product-block"></li>
-        <li class="product-block"></li>
+        <li class="product-block deathnote">
+
+        </li>
+        <li class="product-block fma">
+            <div class="product-header">
+            </div>
+            <div class="apple-watch">
+                    <div class="crown"></div>
+                    <div class="button"></div>
+                    <div class="glass"></div>
+                    <div class="display">
+                    </div>
+                </div>
+        </li>
+        <li class="product-block">
+            <div class="product-header">
+                <h4>iMac</h4>
+                <h5>Don't settle for anything less than HD.</h5>
+            </div>
+        </li>
+        <li class="product-block">
+            <div class="product-header">
+                <h4>Accessories</h4>
+                <h5>Shop.</h5>
+            </div>
+        </li>
     </ul>
 </section>
 {% endblock %} {% block scripts %}
