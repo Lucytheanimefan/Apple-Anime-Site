@@ -25,7 +25,8 @@ def mal_page(username=None):
         return u"Error while fetching top anime for {}".format(username)
     else:
         top_anime = coordinator.filter_top_anime(animelist)
-        return u"{}'s top anime: {}".format(username, ', '.join(list(top_anime)))
+        return render_template("mal_user_anime.html", top_anime = top_anime, username=username)
+        #return u"{}'s top anime: {}".format(username, ', '.join(list(top_anime)))
 
 @app.route("/credentials", methods=["GET"])
 def get_od_credentials():

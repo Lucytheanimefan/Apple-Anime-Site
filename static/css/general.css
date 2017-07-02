@@ -1,0 +1,15 @@
+body {
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main {
+    margin-top: 20px;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+}
