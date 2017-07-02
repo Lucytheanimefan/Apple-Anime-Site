@@ -9,9 +9,20 @@ body {
     margin-top: 20px;
     width: 100%;
 }
+
 a { color: inherit; } 
 
-section {}
+.featured-header{
+    height: 552px;
+}
+.gallery-head{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.subheadline{
+    font-weight: normal;
+}
 
 .products {
     width: 100% !important;
@@ -27,7 +38,6 @@ section {}
     margin: 0.1px;
     background-color: #FAFAFA;
 }
-
 
 /*Change width if the viewport is 735 pixels wide or wider*/
 @media screen and (min-width: 735px) {

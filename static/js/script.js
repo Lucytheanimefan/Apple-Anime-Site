@@ -3,6 +3,7 @@ var imacRatio = 0.68; //screen height by full height of imac
 var imacScreenRatio = 1.71; //width by height
 
 
+
 $(document).ready(function() {
 	getName();
     localStorage.clear();

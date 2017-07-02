@@ -1,7 +1,7 @@
 {% extends "genLayout.html" %} {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" /> {% endblock %} {% block body %}
-<section>
-    <a href="#" class="backing-link">
+<section class="featured-product">
+    <div class="gallery-head">
         <div class="gallery-header">
             <a href="#">
                 <h1>iPad Pro</h1>
@@ -9,7 +9,7 @@
             <h3 class="subheadline">Anything you can watch,<br> you can watch more of</h3>
         </div>
         <div class="gallery-header-image"></div>
-    </a>
+    </div>
 </section>
 <section>
     <ul class="products">
