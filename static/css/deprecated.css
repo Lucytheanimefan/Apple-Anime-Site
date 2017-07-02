@@ -1,0 +1,837 @@
+
+
+/*-------------------- DEPRECATED ----------------------*/
+/* imac */
+
+.main {
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+}
+
+#mainVideo {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.animescreen {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#imac {
+    position: absolute;
+}
+
+#youtube {
+    position: absolute;
+}
+
+
+/* iphone */
+
+
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+    $Box
+\*------------------------------------*/
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#iPhone {
+    position: relative;
+    margin-top: 25em;
+    text-align: center;
+}
+
+span.iphone {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 40em;
+    width: 19.2em;
+    margin-left: -12em;
+    margin-top: -20em;
+    background-size: 19.2em 40em;
+    background-image: url("/static/img/iphone.png");
+    background-repeat: no-repeat;
+}
+
+ul.boxes li {
+    width: 10em;
+    height: 10em;
+    display: inline-block;
+    border-radius: 0.5em;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -35em;
+    -webkit-animation: littleBoxes 3s infinite;
+    -webkit-box-shadow: -1px 1px 0 1px rgba(0, 0, 0, 0.1);
+}
+
+ul li:nth-child(4n+1) {
+    background: url('/static/img/crunchyroll.jpg');
+    /*#fc6956;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-animation-delay: 0.75s;
+}
+
+ul li:nth-child(4n+2) {
+    background: url('/static/img/funimation.jpeg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-animation-delay: 1.5s;
+}
+
+ul li:nth-child(4n+3) {
+    background: url('/static/img/netflix.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-animation-delay: 2.25s;
+}
+
+ul li:nth-child(4n+4) {
+    background: url('/static/img/lockscreen.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-animation-delay: 3s;
+}
+
+
+/*------------------------------------*\
+    $ANIMATIONS
+\*------------------------------------*/
+
+@-webkit-keyframes littleBoxes {
+    25% {
+        width: 10em;
+        height: 10em;
+        top: 50%;
+        left: 50%;
+        margin: -5em 0 0 -35em;
+        -webkit-transform: rotate(-90deg);
+        border-radius: 0.5em;
+    }
+    50% {
+        -webkit-transform: rotate(-180deg);
+        top: 50%;
+        left: 50%;
+        width: 16em;
+        height: 27.4em;
+        margin: -13.8em 0 0 -10em;
+        border-radius: 0em;
+    }
+    75% {
+        width: 10em;
+        height: 10em;
+        top: 50%;
+        left: 50%;
+        margin: -5em 0 0 25em;
+        -webkit-transform: rotate(-270deg);
+        border-radius: 0.5em;
+    }
+    100% {
+        top: 100%;
+        left: 50%;
+        margin-left: 25em;
+    }
+}
+
+
+/* dev icon */
+
+* {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#grid {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    /*top:50%;
+    left:50%;*/
+    height: 500px;
+    width: 500px;
+    /*margin:-153px;*/
+    margin: 0 auto;
+}
+
+#grid .container {
+    height: 100%;
+    width: 100%;
+    border-radius: 0%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(200, 200, 200, 0);
+    animation: containerAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    perspective: 1000px;
+}
+
+#grid .container .walls {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+#grid .container .walls .wall {
+    position: absolute;
+    background-color: rgba(200, 200, 200, 0.75);
+}
+
+#grid .container .walls .wall:nth-child(1) {
+    top: -3px;
+    left: 50%;
+    height: 3px;
+    width: 0%;
+    margin-left: 0px;
+    animation: wallHorzAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .walls .wall:nth-child(2) {
+    bottom: -3px;
+    left: 50%;
+    height: 3px;
+    width: 0%;
+    margin-left: 0px;
+    animation: wallHorzAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .walls .wall:nth-child(3) {
+    top: 50%;
+    left: -3px;
+    height: 0%;
+    width: 3px;
+    margin-top: 0px;
+    animation: wallVertAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .walls .wall:nth-child(4) {
+    top: 50%;
+    right: -3px;
+    height: 0%;
+    width: 3px;
+    margin-top: 0px;
+    animation: wallVertAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .lines {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+#grid .container .line {
+    position: absolute;
+    background-color: rgba(200, 200, 200, 0.75);
+}
+
+#grid .container .line:nth-child(1) {
+    height: 2px;
+    width: 0%;
+    top: 31.5%;
+    left: 0px;
+    margin-top: -1px;
+    animation: lineHorzAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(2) {
+    height: 2px;
+    width: 0%;
+    top: 31.5%;
+    right: 0px;
+    margin-top: -1px;
+    animation: lineHorzAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(3) {
+    height: 2px;
+    width: 0%;
+    bottom: 31.5%;
+    left: 0px;
+    margin-bottom: -1px;
+    animation: lineHorzAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(4) {
+    height: 2px;
+    width: 0%;
+    bottom: 31.5%;
+    right: 0px;
+    margin-bottom: -1px;
+    animation: lineHorzAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(5) {
+    height: 0%;
+    width: 2px;
+    left: 31.5%;
+    top: 0px;
+    margin-left: -1px;
+    animation: lineVertAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(6) {
+    height: 0%;
+    width: 2px;
+    left: 31.5%;
+    bottom: 0px;
+    margin-left: -1px;
+    animation: lineVertAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(7) {
+    height: 0%;
+    width: 2px;
+    right: 31.5%;
+    top: 0px;
+    margin-right: -1px;
+    animation: lineVertAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(8) {
+    height: 0%;
+    width: 2px;
+    right: 31.5%;
+    bottom: 0px;
+    margin-right: -1px;
+    animation: lineVertAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(9) {
+    height: 1px;
+    width: 0%;
+    left: 50%;
+    top: 50%;
+    margin-left: 0%;
+    animation: lineMidHorzAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(10) {
+    height: 0%;
+    width: 1px;
+    left: 50%;
+    top: 50%;
+    margin-top: 0%;
+    animation: lineMidVertAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(11) {
+    height: 0%;
+    width: 2px;
+    left: 50%;
+    top: 50%;
+    margin-top: -1px;
+    transform-origin: 50% 50%;
+    transform: rotateZ(-45deg);
+    animation: lineDiagAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(12) {
+    height: 0%;
+    width: 2px;
+    left: 50%;
+    top: 50%;
+    margin-top: -1px;
+    transform-origin: 50% 50%;
+    transform: rotateZ(45deg);
+    animation: lineDiagAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(13) {
+    height: 1px;
+    width: 0%;
+    left: 0%;
+    top: 6%;
+    margin-top: -1px;
+    animation: lineSecHorzAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(14) {
+    height: 1px;
+    width: 0%;
+    left: 0%;
+    bottom: 6%;
+    margin-bottom: -1px;
+    animation: lineSecHorzAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(15) {
+    height: 0%;
+    width: 1px;
+    top: 0%;
+    left: 6%;
+    margin-left: -1px;
+    animation: lineSecVertAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .line:nth-child(16) {
+    height: 0%;
+    width: 1px;
+    top: 0%;
+    right: 6%;
+    margin-right: -1px;
+    animation: lineSecVertAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .circles {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+#grid .container .circle {
+    height: 0%;
+    width: 0%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(200, 200, 200, 0);
+}
+
+#grid .container .circle:nth-child(1) {
+    animation: circCentAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .circle:nth-child(2) {
+    animation: circMidAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#grid .container .circle:nth-child(3) {
+    animation: circOutAnim 2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes wallHorzAnim {
+    0% {
+        width: 0%;
+        margin-left: 0%;
+        background-color: rgba(200, 200, 200, 0.75);
+    }
+    10% {
+        width: 100%;
+        margin-left: -50%;
+        background-color: rgba(200, 200, 200, 0.75);
+    }
+    15%,
+    100% {
+        width: 100%;
+        margin-left: -50%;
+        background-color: rgba(200, 200, 200, 0);
+    }
+}
+
+@keyframes wallVertAnim {
+    0% {
+        height: 0%;
+        margin-top: 0%;
+        background-color: rgba(200, 200, 200, 0.75);
+    }
+    10% {
+        height: 100%;
+        margin-top: -50%;
+        background-color: rgba(200, 200, 200, 0.75);
+    }
+    15%,
+    100% {
+        height: 100%;
+        margin-top: -50%;
+        background-color: rgba(200, 200, 200, 0);
+    }
+}
+
+@keyframes containerAnim {
+    0%,
+    10% {
+        border-radius: 0%;
+        border-color: rgba(200, 200, 200, 0);
+    }
+    15% {
+        border-radius: 0%;
+        border-color: rgba(200, 200, 200, 0.75);
+    }
+    30% {
+        border-radius: 21.67%;
+        border-color: rgba(200, 200, 200, 0.75);
+    }
+    100% {
+        border-radius: 21.67%;
+        border-color: rgba(200, 200, 200, 0.75);
+    }
+}
+
+@keyframes lineHorzAnim {
+    0%,
+    22.5% {
+        width: 0%;
+    }
+    30%,
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes lineVertAnim {
+    0%,
+    22.5% {
+        height: 0%;
+    }
+    30%,
+    100% {
+        height: 50%;
+    }
+}
+
+@keyframes lineMidHorzAnim {
+    0%,
+    29% {
+        width: 0%;
+        margin-left: 0%;
+    }
+    45%,
+    100% {
+        width: 100%;
+        margin-left: -50%;
+    }
+}
+
+@keyframes lineMidVertAnim {
+    0%,
+    29% {
+        height: 0%;
+        margin-top: 0%;
+    }
+    45%,
+    100% {
+        height: 100%;
+        margin-top: -50%;
+    }
+}
+
+@keyframes lineDiagAnim {
+    0%,
+    29% {
+        height: 0%;
+        margin-top: 0%;
+    }
+    45%,
+    100% {
+        height: 141%;
+        margin-top: -70.5%;
+    }
+}
+
+@keyframes lineSecHorzAnim {
+    0%,
+    40% {
+        width: 0%;
+    }
+    60%,
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes lineSecVertAnim {
+    0%,
+    40% {
+        height: 0%;
+    }
+    60%,
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes circCentAnim {
+    0%,
+    54% {
+        height: 0%;
+        width: 0%;
+        margin: 0%;
+        border-color: rgba(200, 200, 200, 0);
+    }
+    55% {
+        height: 0%;
+        width: 0%;
+        margin: 0%;
+        border-color: rgba(200, 200, 200, 0.75);
+    }
+    80%,
+    100% {
+        height: -webkit-calc(37% - 2px);
+        width: -webkit-calc(37% - 2px);
+        margin: -webkit-calc(-18.5% - 1px);
+        border-color: rgba(200, 200, 200, 0.75);
+    }
+}
+
+@keyframes circMidAnim {
+    0%,
+    60% {
+        height: 0%;
+        width: 0%;
+        margin: 0%;
+        border-color: rgba(200, 200, 200, 0);
+    }
+    61% {
+        height: 0%;
+        width: 0%;
+        margin: 0%;
+        border-color: rgba(200, 200, 200, 0.75);
+    }
+    90%,
+    100% {
+        height: 51.5%;
+        width: 51.5%;
+        margin: -webkit-calc(-25.75% - 2px);
+        border-color: rgba(200, 200, 200, 0.75);
+    }
+}
+
+@keyframes circOutAnim {
+    0%,
+    69% {
+        height: 0%;
+        width: 0%;
+        margin: 0%;
+        border-color: rgba(200, 200, 200, 0);
+    }
+    70% {
+        height: 0%;
+        width: 0%;
+        margin: 0%;
+        border-color: rgba(200, 200, 200, 0.75);
+    }
+    100% {
+        height: 88%;
+        width: 88%;
+        margin: -webkit-calc(-44% - 2px);
+        border-color: rgba(200, 200, 200, 0.75);
+    }
+}
+
+
+/*  watch */
+
+.apple-watch {
+    position: relative;
+    width: 17.75em;
+    height: 20.5em;
+    margin: 2em auto;
+    color: #999;
+    background: currentColor;
+    border-radius: 3.25em;
+    transform: translateZ(0);
+    transition: all 500ms;
+    top: 12em;
+}
+
+.apple-watch:before,
+.apple-watch:after {
+    content: '';
+    position: absolute;
+    top: 1.3125em;
+    left: 0.875em;
+    display: block;
+    width: 0.5em;
+    height: 0;
+    transform: skewY(-45deg);
+    box-shadow: 0 0 0.375em 0.25em rgba(255, 255, 255, 0.7);
+}
+
+.apple-watch:after {
+    left: auto;
+    top: 1.3125em;
+    right: 0.875em;
+    transform: skewY(45deg);
+}
+
+.glass {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 91%;
+    height: 91%;
+    overflow: hidden;
+    border-radius: 2.5625em;
+    box-shadow: 0 0 0 0.125em #333, 0 -1.25em 1em -0.75em rgba(255, 255, 255, 0.5), 1.5em 0 1em -1em rgba(255, 255, 255, 0.5), 0 1.25em 1em -0.75em rgba(255, 255, 255, 0.5), -1.5em 0 1em -1em rgba(255, 255, 255, 0.5), inset 3em 0 4em -3em rgba(255, 255, 255, 0.6), inset -0.25em -0.25em 0.75em rgba(255, 255, 255, 0.4), inset 0.5em 0 0.75em -0.5em rgba(255, 255, 255, 0.6), inset 0 0 0 2em #000;
+}
+
+.glass:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 88%;
+    height: 10%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10% / 50%;
+    box-shadow: inset 0 1.25em 1em 0.25em rgba(255, 255, 255, 0.4);
+}
+
+.display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 91%;
+    height: 91%;
+    background-color: #000;
+    background-image: url(https://68.media.tumblr.com/2b7e058d762482d9588f1efe7c06aff8/tumblr_mkyoyfM5ug1qajy6bo2_r1_500.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+    border-radius: 2.5625em;
+}
+
+.crown {
+    position: absolute;
+    z-index: 10;
+    top: 4.75em;
+    right: -0.8em;
+    width: 1.15em;
+    height: 3.5em;
+    overflow: hidden;
+    background-color: currentColor;
+    background-size: 50% 0.25em;
+    background-position: top right;
+    background-repeat: repeat-y;
+    border-left: 3px solid #333;
+    border-radius: 50% 25% 25% 50% / 50% 25% 25% 50%;
+    box-shadow: inset 0 0.15em 0.15em rgba(0, 0, 0, 0.5), inset 5.15em 0 0.15em -5em rgba(255, 255, 255, 0.5), inset 5.3em 0 0.15em -5em rgba(0, 0, 0, 0.2), inset 0 0.4em 0.5em rgba(255, 255, 255, 0.8), inset 0 1em 0.5em rgba(0, 0, 0, 0.3), inset 0 -1em 0.5em rgba(0, 0, 0, 0.3), inset 0 0 0 1em rgba(255, 255, 255, 0.5);
+}
+
+.crown:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: block;
+    width: 45%;
+    height: 0.125em;
+    color: rgba(0, 0, 0, 0.4);
+    background: currentColor;
+    box-shadow: 0 -0.25em, 0 -0.5em, 0 -0.75em rgba(0, 0, 0, 0.3), 0 -1em rgba(0, 0, 0, 0.3), 0 -1.1875em rgba(0, 0, 0, 0.3), 0 -1.375em rgba(0, 0, 0, 0.2), 0 -1.5625em rgba(0, 0, 0, 0.2), 0 -1.6875em rgba(0, 0, 0, 0.15), 0 0.25em, 0 0.5em, 0 0.75em rgba(0, 0, 0, 0.3), 0 1em rgba(0, 0, 0, 0.3), 0 1.1875em rgba(0, 0, 0, 0.3), 0 1.375em rgba(0, 0, 0, 0.2), 0 1.5625em rgba(0, 0, 0, 0.2), 0 1.6875em rgba(0, 0, 0, 0.15);
+    opacity: 0.5;
+}
+
+.apple-watch .button {
+    position: absolute;
+    z-index: 10;
+    top: 10.8125em;
+    right: -0.25em;
+    width: 0.25em;
+    height: 5.25em;
+    overflow: hidden;
+    background-color: currentColor;
+    background-size: 50% 0.25em;
+    background-position: top right;
+    background-repeat: repeat-y;
+    border-radius: 30% 25% 25% 30% / 50% 25% 25% 50%;
+    box-shadow: -0.0625em 0 0.125em #777, inset -0.0625em 0 0.0625em rgba(0, 0, 0, 0.5), inset 0 0.0625em rgba(0, 0, 0, 0.5), inset 0 0.125em 0.15em rgba(255, 255, 255, 0.8), inset 0 0.25em rgba(0, 0, 0, 0.5), inset 0 0.5em 0.15em rgba(255, 255, 255, 0.8), inset 0 -0.25em 0.125em rgba(0, 0, 0, 0.6), inset 0 -0.5em 0.125em rgba(255, 255, 255, 0.8), inset 0 -0.75em 0.125em rgba(0, 0, 0, 0.6), inset 0 1.25em 0.5em -0.25em rgba(0, 0, 0, 0.8), inset 0 0 0 0.25em rgba(255, 255, 255, 0.75);
+}
+
+a.button {
+    display: inline-block;
+    min-width: 5em;
+    padding: 0.75em 1.5em;
+    margin: 0.25em;
+    color: #08c;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 0.375em;
+}
