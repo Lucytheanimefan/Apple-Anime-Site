@@ -29,7 +29,6 @@
 .product-block {
     display: inline-block;
     max-width: 725px;
-    min-width: 320px;
     height: 268px;
     margin: 0.1px;
 
@@ -56,10 +55,17 @@
     z-index: 1;
 }
 
+/*Change width if the viewport is 1070 pixels wide or wider*/
+
+@media screen and (min-width: 1070px) {
+    .product-block {
+        width: 24.7%;
+    }
+}
 
 /*Change width if the viewport is 735 pixels wide or wider*/
 
-@media screen and (min-width: 735px) {
+@media screen and (min-width: 735px) and (max-width:1070px)  {
     .product-block {
         width: 49.7%;
     }
