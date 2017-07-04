@@ -1,8 +1,23 @@
+@font-face {
+    font-family: 'sf-pro-light';
+    src: url('/static/fonts/sf-pro-display_light.woff');
+}
+
+@font-face {
+    font-family: 'sf-pro-medium';
+    src: url('/static/fonts/sf-pro-display_medium.woff');
+}
+
+@font-face {
+    font-family: 'sf-pro-regular';
+    src: url('/static/fonts/sf-pro-text_regular.woff');
+}
+
 body {
     -webkit-box-align: center;
     -webkit-box-pack: center;
     display: -webkit-box;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "sf-pro-regular";
 }
 
 .main {
@@ -13,3 +28,5 @@ body {
 a {
     color: inherit;
 }
+
+
