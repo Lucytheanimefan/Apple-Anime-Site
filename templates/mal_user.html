@@ -6,7 +6,8 @@
 
 <h1>{{ username }}</h1>
 {% for anime in top_anime %}
-    <div>{{ anime }}</div>
+    <div>{{ anime['title'] }}</div>
+    <img src = {{ anime['image'] }} >
 {% endfor %}
 
 {% endblock %}

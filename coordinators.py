@@ -38,7 +38,7 @@ class MalCoordinator(object):
         def top_anime_filter(entry):
             return entry['status'] == 2 and entry['score'] == 10
 
-        def get_title(entry):
-            return entry['anime_title']
+        def get_title_image(entry):
+            return {'title': entry['anime_title'], 'image':entry['anime_image_path']}
 
-        return set(map(get_title, filter(top_anime_filter, animelist)))
+        return map(get_title_image, filter(top_anime_filter, animelist))

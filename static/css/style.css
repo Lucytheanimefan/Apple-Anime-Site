@@ -1,14 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     min-width: 430px;
 }
 
+.main {
+    margin-top: 0px !important;
+}
+
 .featured-header {
     height: 552px;
+    margin: 0;
+    padding: 0;
+}
+
+.featured-product {
+    margin: 0;
+    padding: 0;
 }
 
 .gallery-head {
     text-align: center;
     margin-top: 8%;
+    background-color: #FAFAFA;
 }
 
 .gallery-header-image {
@@ -36,7 +53,7 @@ body {
     margin: 0.1px;
     min-height: 195px;
     background-color: #FAFAFA;
-    vertical-align:top;
+    vertical-align: top;
 }
 
 .product-block:hover {
@@ -318,11 +335,12 @@ body {
 
 .watch {
     height: 90%;
-
 }
-.fma{
+
+.fma {
     overflow: hidden !important;
 }
+
 .apple-watch {
     position: relative;
     width: 165px;
@@ -495,7 +513,8 @@ a.button {
 
 
 /* ------ accessories = sushi ---- */
-.summer{
+
+.summer {
     text-align: center;
     background: url("/static/img/summer_accessories.png") no-repeat center center;
     -webkit-background-size: contain;
