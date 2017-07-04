@@ -27,8 +27,42 @@
 
 input{
     height: 42px;
-    width: 326px;
+    width: 328px;
     border-radius: 5px;
-    border-style: solid;
+    border-style: none;
+    padding-left: 10px;
+    font-size: 17px;
+    color: grey;
+    border-color: none !important;
+}
+button:focus {outline:none;}
+#submit{
+    margin-left: -43px;
+    background: transparent;
+    border: none !important;
+}
+.icon {
+    font-family: "shared-icons";
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 26px;
+    color: darkgrey !important;
 }
 
+.icon:focus{
+    color:black;
+}
+.icon_sign_in:before {
+    content: "\f125";
+
+
+}

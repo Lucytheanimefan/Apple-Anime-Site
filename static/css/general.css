@@ -13,6 +13,13 @@
     src: url('/static/fonts/sf-pro-text_regular.woff');
 }
 
+@font-face {
+    font-family: "shared-icons";
+    src: url("/static/fonts/shared-icons.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     -webkit-box-align: center;
     -webkit-box-pack: center;
@@ -29,4 +36,11 @@ a {
     color: inherit;
 }
 
+h1{
+	font-family: "sf-pro-medium";
+}
+
+.light{
+	font-family: "sf-pro-light";
+}
 

@@ -33,9 +33,15 @@ def get_od_credentials():
 	name = request.headers.get('X-Forwarded-User')
 	return str(name)
 
+@app.route("/signin", methods=["POST"])
+def signin():
+    username = request.form["malUsername"]#TODO: do something with username
+    return home()
+
 @app.route("/login")
 def login():
     return render_template("login.html")
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
