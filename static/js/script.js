@@ -7,6 +7,10 @@ var imacScreenRatio = 1.71; //width by height
 $(document).ready(function() {
 	getName();
     localStorage.clear();
+    imacHeight = height * 0.85;
+    iframeHeight = imacHeight * imacRatio;
+    iframeWidth = iframeHeight * imacScreenRatio;
+    /*
     if (localStorage.getItem("visitedAnime@Apple") == null) {
         localStorage.setItem("visitedAnime@Apple", true);
     } else {
@@ -19,6 +23,7 @@ $(document).ready(function() {
         }, 3500);
 
     }
+    
     imacHeight = height * 0.85;
     iframeHeight = imacHeight * imacRatio;
     iframeWidth = iframeHeight * imacScreenRatio;
@@ -34,6 +39,7 @@ $(document).ready(function() {
 
     $("#youtube").css({ "width": iframeWidth + "px", "padding-left": iframePadding, "padding-right": iframePadding, "padding-top": iframePaddingTop });
     $("section").css("min-height", imacHeight + "px");
+    */
 });
 
 // get first & last name
@@ -63,6 +69,7 @@ colorButton.on('click', function() {
 var player, playing = false;
 
 function onYouTubeIframeAPIReady() {
+    console.log("youtube loaded!");
     player = new YT.Player('youtube', {
         height: iframeHeight,
         width: iframeWidth,

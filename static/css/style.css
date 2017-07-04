@@ -1,3 +1,7 @@
+body{
+    min-width:430px;
+}
+
 .featured-header {
     height: 552px;
 }
@@ -206,16 +210,16 @@
 }
 
 .wifi:before {
-    width: 50%;
+    width: 78%;
     height: 50%;
-    left: 13%;
+    left: 15%;
     top: 10%;
 }
 
 .wifi:after {
-    width: 10%;
+    width: 30%;
     height: 10%;
-    left: 33%;
+    left: 35%;
     top: 33%;
 }
 
@@ -225,9 +229,9 @@
     display: inline-block;
     border: 2px solid transparent;
     border-top-color: #FFFFFF;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
+    -moz-border-radius: 60%;
+    -webkit-border-radius: 60%;
+    border-radius: 60%;
 }
 
 .battery {
@@ -299,8 +303,8 @@
 .home:before {
     width: 13.33333px;
     height: 13.33333px;
-    left: 8px;
-    top: 8px;
+    left: 9px;
+    top: 9px;
     border: 1.77778px solid rgba(136, 136, 136, 0.3);
     -moz-border-radius: 30%;
     -webkit-border-radius: 30%;
@@ -447,4 +451,38 @@ a.button {
     text-decoration: none;
     border: 2px solid;
     border-radius: 0.375em;
+}
+
+
+/* ------------ iMac ----------- */
+.shelter{
+    text-align: center;
+    background: url("/static/img/imac.png") no-repeat center center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-color: #FAFAFA;
+}
+
+#mainVideo {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.animescreen {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#youtube {
+    top:0;
+    z-index: 5;
+    width: 60%;
+    max-height: 190px;
+
 }
