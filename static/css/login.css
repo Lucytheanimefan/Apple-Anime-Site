@@ -61,8 +61,67 @@ button:focus {outline:none;}
 .icon:focus{
     color:black;
 }
+
+.icon_sign_in{
+
+}
 .icon_sign_in:before {
     content: "\f125";
+}
 
+#app-content {
+    min-height: 100%;
+    margin-top: -105px;
+    margin-bottom: -95px;
+    padding-top: 105px;
+    padding-bottom: 95px;
+}
 
+.app-icons-2x {
+    background-image: url("/static/img/app_icons@2x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 656px;
+    height: 68px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-device-width:736px) {
+    .apps,.app-icons-2x {
+        display: none;
+    }
+    .mobile-apps {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .mobile-icons-2x {
+        background-image: url("/static/img/icons_mobile@2x.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 290px;
+        height: 137px;
+        margin: 0 auto;
+        display: block;
+    }
+
+}
+
+.mobile-icons-1x,
+.mobile-icons-2x {
+    display: none;
+}
+
+.app-icons-1x,
+.app-icons-2x {
+    display: block;
+}
+
+.tk-section-headline {
+    font-size: 40px;
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: 0.008em;
+    font-family: "sf-pro-medium";
 }
