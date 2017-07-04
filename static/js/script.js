@@ -94,26 +94,5 @@ function mainPage() {
 
 function onPlayerStateChange(event) {
     console.log(event);
-    if (!playing) {
-        console.log(localStorage.getItem("visitedAnime@Apple"));
-        //if (localStorage.getItem("visitedAnime@Apple") == null || ) {
-        console.log("main page:")
-        mainPage();
-        //}
-        /*$("#grid").css("display", "inline");
-        
-        setTimeout(function() {
-            $("#grid").animate({
-                left: "-=" + (shrinkSpeed*2),
-                top: "-=" + (shrinkSpeed - 240),
-                width: "-=" + shrinkSpeed*1.5,
-                height: "-=" + shrinkSpeed*1.5
-            }, 5000, function() {
-                // Animation complete.
-            });
-        }, 2000);
-*/
 
-        playing = true;
-    }
 }
