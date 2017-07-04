@@ -30,12 +30,12 @@
     display: inline-block;
     height: 268px;
     margin: 0.1px;
-
+    min-height: 195px;
     background-color: #FAFAFA;
 }
 
-.product-block:hover{
-    cursor: pointer; 
+.product-block:hover {
+    cursor: pointer;
 }
 
 .deathnote {
@@ -54,6 +54,7 @@
     z-index: 1;
 }
 
+
 /*Change width if the viewport is 1070 pixels wide or wider*/
 
 @media screen and (min-width: 1070px) {
@@ -62,9 +63,10 @@
     }
 }
 
+
 /*Change width if the viewport is 735 pixels wide or wider*/
 
-@media screen and (min-width: 735px) and (max-width:1070px)  {
+@media screen and (min-width: 735px) and (max-width:1070px) {
     .product-block {
         width: 49.7%;
     }
@@ -305,19 +307,23 @@
     border-radius: 30%;
 }
 
+
 /*  watch */
+
+.watch {
+    height: 90%;
+}
 
 .apple-watch {
     position: relative;
-    width: 11.833em;
-    height: 13.67em;
+    width: 165px;
+    height: 191px;
     margin: 2em auto;
     color: #999;
     background: currentColor;
     border-radius: 3.25em;
     transform: translateZ(0);
     transition: all 500ms;
-
 }
 
 .apple-watch:before,
@@ -386,10 +392,10 @@
 .crown {
     position: absolute;
     z-index: 10;
-    top: 3.17em;
-    right: -0.533em;
-    width: .767em;
-    height: 2.33em;
+    top: 43px;
+    right: -6px;
+    width: 10.73px;
+    height: 32.61px;
     overflow: hidden;
     background-color: currentColor;
     background-size: 50% 0.17em;
@@ -418,10 +424,10 @@
 .apple-watch .button {
     position: absolute;
     z-index: 10;
-    top: 7.208em;
-    right: -0.167em;
-    width: 0.167em;
-    height: 3.5em;
+    top: 100px;
+    right: -2px;
+    width: 2.33px;
+    height: 49px;
     overflow: hidden;
     background-color: currentColor;
     background-size: 50% 0.25em;
@@ -442,4 +448,3 @@ a.button {
     border: 2px solid;
     border-radius: 0.375em;
 }
-
