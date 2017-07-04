@@ -36,6 +36,7 @@ body {
     margin: 0.1px;
     min-height: 195px;
     background-color: #FAFAFA;
+    vertical-align:top;
 }
 
 .product-block:hover {
@@ -50,6 +51,7 @@ body {
     background-size: contain;
     background-color: black;
     color: white;
+    overflow: hidden;
 }
 
 #totoro {
@@ -316,8 +318,11 @@ body {
 
 .watch {
     height: 90%;
-}
 
+}
+.fma{
+    overflow: hidden !important;
+}
 .apple-watch {
     position: relative;
     width: 165px;
@@ -482,10 +487,10 @@ a.button {
 }
 
 #youtube {
-    top: 0;
+    padding-top: 10px;
     z-index: 5;
     width: 60%;
-    max-height: 190px;
+    max-height: 180px;
 }
 
 
