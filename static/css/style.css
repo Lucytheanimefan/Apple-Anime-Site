@@ -1,5 +1,5 @@
-body{
-    min-width:430px;
+body {
+    min-width: 430px;
 }
 
 .featured-header {
@@ -455,7 +455,8 @@ a.button {
 
 
 /* ------------ iMac ----------- */
-.shelter{
+
+.shelter {
     text-align: center;
     background: url("/static/img/imac.png") no-repeat center center;
     -webkit-background-size: contain;
@@ -463,6 +464,7 @@ a.button {
     -o-background-size: contain;
     background-size: contain;
     background-color: #FAFAFA;
+    overflow: hidden;
 }
 
 #mainVideo {
@@ -480,9 +482,21 @@ a.button {
 }
 
 #youtube {
-    top:0;
+    top: 0;
     z-index: 5;
     width: 60%;
     max-height: 190px;
+}
 
+
+/* ------ accessories = sushi ---- */
+.summer{
+    text-align: center;
+    background: url("/static/img/summer_accessories.png") no-repeat center center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-color: #FAFAFA;
+    overflow: hidden;
 }
