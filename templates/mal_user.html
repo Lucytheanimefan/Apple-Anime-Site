@@ -1,17 +1,16 @@
 {% extends "genLayout.html" %} {% block css %}
-
-{% endblock %} 
-
-{% block body %}
-
-<h1>{{ username }}</h1>
-{% for anime in top_anime %}
-    <div>{{ anime['title'] }}</div>
-    <img src = {{ anime['image'] }} >
-{% endfor %}
-
-{% endblock %}
-
-{% block scripts %}
-
-{% endblock %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mal_user.css') }}"> {% endblock %} {% block body %}
+<section>
+    <h1 class="mal_user">{{ username }}</h1>
+</section>
+<section class="top_anime">
+    <h2>Top Anime</h2>
+    <ul class="top_anime_list">
+        {% for anime in top_anime %}
+        <li class="anime">
+            <div class="anime-title">{{ anime['title'] }}</div>
+            <img src={{ anime[ 'image'] }}> {% endfor %}
+        </li>
+    </ul>
+</section>
+{% endblock %} {% block scripts %} {% endblock %}
