@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, request, jsonify
+import flask
+from flask import Flask, render_template, request, jsonify, send_file
 from commons import db
 import coordinators
 
@@ -41,6 +42,13 @@ def signin():
 @app.route("/login")
 def login():
     return render_template("login.html")
+
+
+@app.route("/footer/<footer_category>/")
+def footer_pages(footer_category):
+    # TODO: do something for this
+    return flask.redirect("http://24.media.tumblr.com/a958e89157a9b23950059aaa5acf2be2/tumblr_myfqb93rcs1spfncwo1_400.gif")
+
 
 
 if __name__ == "__main__":
