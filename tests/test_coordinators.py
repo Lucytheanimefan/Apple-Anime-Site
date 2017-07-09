@@ -31,14 +31,46 @@ class TestMalCoordinator(object):
 
 
         expected_top_anime = {
-            'Ouran Koukou Host Club',
-            'Byousoku 5 Centimeter',
-            'Tengen Toppa Gurren Lagann',
-            'Toradora!',
-            'Bakemonogatari',
-            'ReLIFE',
-            'One Punch Man',
-            'Kimi no Na wa.'
+            (
+                'Ouran Koukou Host Club',
+                'https://myanimelist.cdn-dena.com/r/96x136/images/anime/7/79999.jpg'
+                '?s=a7baec80c50ad64f591ee6040c21cc77'
+            ),
+            (
+                'Byousoku 5 Centimeter',
+                'https://myanimelist.cdn-dena.com/r/96x136/images/anime/7/79999.jpg'
+                '?s=a7baec80c50ad64f591ee6040c21cc77'
+            ),
+            (
+                'Tengen Toppa Gurren Lagann',
+                'https://myanimelist.cdn-dena.com/r/96x136/images/anime/7/79999.jpg'
+                '?s=a7baec80c50ad64f591ee6040c21cc77'
+            ),
+            (
+                'Toradora!',
+                'https://myanimelist.cdn-dena.com/r/96x136/images/anime/7/79999.jpg'
+                '?s=a7baec80c50ad64f591ee6040c21cc77'
+            ),
+            (
+                'Bakemonogatari',
+                'https://myanimelist.cdn-dena.com/r/96x136/images/anime/7/79999.jpg'
+                '?s=a7baec80c50ad64f591ee6040c21cc77'
+            ),
+            (
+                'ReLIFE',
+                'https://myanimelist.cdn-dena.com/r/96x136/images/anime/7/79999.jpg'
+                '?s=a7baec80c50ad64f591ee6040c21cc77'
+            ),
+            (
+                'One Punch Man',
+                'https://myanimelist.cdn-dena.com/r/96x136/images/anime/7/79999.jpg'
+                '?s=a7baec80c50ad64f591ee6040c21cc77'
+            ),
+            (
+                'Kimi no Na wa.',
+                'https://myanimelist.cdn-dena.com/r/96x136/images/anime/7/79999.jpg'
+                '?s=a7baec80c50ad64f591ee6040c21cc77'
+            ),
         }
 
         actual_top_anime = coordinator.filter_top_anime(actual_result)

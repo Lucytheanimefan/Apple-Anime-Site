@@ -1,11 +1,17 @@
 import os
 from flask import Flask, render_template, request, jsonify
 from commons import db
+from models import common, mal
 import coordinators
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/tkatzenbaer'
-# db.init_app(app)
+db.init_app(app)
+
+with app.app_context():
+    # Extensions like Flask-SQLAlchemy now know what the "current" app
+    # is while within this block. Therefore, you can now run........
+    db.create_all()
 
 
 @app.route("/")
@@ -21,9 +27,14 @@ def mal_page(username=None):
 
     coordinator = coordinators.MalCoordinator()
     animelist = coordinator.fetch_animelist(username)
-    if isinstance(animelist, dict):
+
+    # TODO: Associate entries with user
+
+    if not animelist:
         return u"Error while fetching top anime for {}".format(username)
     else:
+        db.session.bulk_save_objects(animelist)
+        db.session.commit()
         top_anime = coordinator.filter_top_anime(animelist)
         return render_template("mal_user.html", top_anime = top_anime, username=username)
         #return u"{}'s top anime: {}".format(username, ', '.join(list(top_anime)))

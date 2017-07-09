@@ -8,8 +8,8 @@
     <ul class="top_anime_list">
         {% for anime in top_anime %}
         <li class="anime">
-            <div class="anime-title">{{ anime['title'] }}</div>
-            <img src={{ anime[ 'image'] }}> {% endfor %}
+            <div class="anime-title">{{ anime[0] }}</div>
+            <img src={{ anime[1] }}> {% endfor %}
         </li>
     </ul>
 </section>
