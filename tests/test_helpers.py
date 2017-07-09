@@ -14,7 +14,7 @@ class TestHelpers(object):
         expected_result = '/foo/test_resources'
 
         # act
-        actual_result = helpers.find_test_resources_dir(start_dir)
+        actual_result = helpers._find_test_resources_dir(start_dir)
 
         # assert
         assert_equal(expected_result, actual_result)
@@ -33,7 +33,7 @@ class TestHelpers(object):
         expected_result = None
 
         # act
-        actual_result = helpers.find_test_resources_dir(start_dir)
+        actual_result = helpers._find_test_resources_dir(start_dir)
 
         # assert
         assert_equal(expected_result, actual_result)

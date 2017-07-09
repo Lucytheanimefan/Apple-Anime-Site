@@ -1,7 +1,7 @@
 import os
 
 
-def find_test_resources_dir(start_dir):
+def _find_test_resources_dir(start_dir):
     dirname, basename = os.path.split(start_dir)
     potential_dir = os.path.join(start_dir, 'test_resources')
 
@@ -11,4 +11,4 @@ def find_test_resources_dir(start_dir):
         if dirname == '/' and not basename:
             return None
         else:
-            return find_test_resources_dir(dirname)
+            return _find_test_resources_dir(dirname)

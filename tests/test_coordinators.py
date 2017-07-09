@@ -7,7 +7,7 @@ from nose.tools import assert_set_equal
 from models import common, mal
 
 from coordinators import MalCoordinator
-from tests.helpers import find_test_resources_dir
+from tests.helpers import _find_test_resources_dir
 
 
 class TestMalCoordinator(object):
@@ -15,7 +15,7 @@ class TestMalCoordinator(object):
     def test_fetch_animelist(self, mocked_requests):
         # arrange
         request_result_fpath = join(
-            find_test_resources_dir(__file__),
+            _find_test_resources_dir(__file__),
             'mal', 'myanimelist_net_animelist_katzenbaer_load.json'
         )
 
