@@ -11,7 +11,7 @@ from commons import db
 from models import common, mal
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/tkatzenbaer'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/#tkatzenbaer'
 db.init_app(app)
 
 with app.app_context():
@@ -138,6 +138,8 @@ def footer_pages(footer_category):
 
 if __name__ == "__main__":
     port = os.environ.get("PORT_WEB")
+    print "PORT: "
+    print port
     if port:
         app.run(host='0.0.0.0', port=int(port))
     else:
