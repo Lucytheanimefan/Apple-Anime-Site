@@ -1,7 +1,6 @@
-from commons import db
 import enum
 
-from datetime import datetime
+from commons import db
 
 
 class MalUser(db.Model):
@@ -15,11 +14,12 @@ class MalUser(db.Model):
 
     entries = db.relationship("MalEntry", back_populates="mal_user")
 
-    def __init__(self, user):
+    def __init__(self, username, user=None):
+        self.username = username
         self.user = user
 
     def __repr__(self):
-        return '<Post %r>' % self.title
+        return '<MalUser {}>'.format(self.username)
 
 
 class MalEntryUserStatus(enum.Enum):
@@ -51,3 +51,11 @@ class MalEntry(db.Model):
     watched_episodes = db.Column(db.Integer)
     total_episodes = db.Column(db.Integer)
     user_score = db.Column(db.Integer)
+
+    def __repr__(self):
+        mal_username = self.mal_user.username if self.mal_user else ''
+        return '<{}:MalEntry {} - {} - {} - {}/{}>'.format(mal_username, self.title,
+                                                           self.airing_status.name,
+                                                           self.user_status.name,
+                                                           self.watched_episodes,
+                                                           self.total_episodes)
