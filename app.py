@@ -1,5 +1,7 @@
 import os
 
+import hashlib
+
 from flask import Flask, render_template, request, escape
 from sqlalchemy import func
 
@@ -18,14 +20,14 @@ with app.app_context():
 
 
 def get_apple_user():
-    dsid = request.headers.get('X-AppleConnect-PersonId')
-    # Debugging Code
-    if not dsid:
-        dsid = os.environ.get('X-AppleConnect-PersonId')
-    user = common.User.query.filter_by(dsid=dsid).first()
+    email = request.headers.get('X-AppleConnect-EmailAddress',
+                                os.environ.get('X-AppleConnect-EmailAddress'))
+
+    email_hash = hashlib.sha256(email).hexdigest()
+    user = common.User.query.filter_by(email_hash=email_hash).first()
     """:type: common.User"""
     if not user:
-        user = common.User(dsid)
+        user = common.User(email=email)
         db.session.add(user)
         db.session.commit()
     return user
