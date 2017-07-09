@@ -5,12 +5,13 @@ class User(db.Model):
     __tablename__ = 'user'
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True)
+    dsid = db.Column(db.Integer, unique=True)
 
-    mal_user = db.relationship("MalUser", uselist=False, back_populates="user")
+    mal_user = db.relationship("MalUser", uselist=False, back_populates="user",
+                               cascade="all, delete-orphan")
 
-    def __init__(self, username):
-        self.username = username
+    def __init__(self, dsid):
+        self.dsid = dsid
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<User %r>' % self.dsid

@@ -7,14 +7,14 @@ class MalUser(db.Model):
     __tablename__ = 'mal_user'
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80))
+    username = db.Column(db.String(80), unique=True)
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="mal_user")
 
-    entries = db.relationship("MalEntry", back_populates="mal_user")
+    entries = db.relationship("MalEntry", back_populates="mal_user", cascade="all, delete-orphan")
 
-    def __init__(self, username, user=None):
+    def __init__(self, username, user):
         self.username = username
         self.user = user
 

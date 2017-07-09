@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, escape
 from commons import db
 from models import common, mal
 import coordinators
@@ -14,14 +14,42 @@ with app.app_context():
     db.create_all()
 
 
+def get_apple_user():
+    dsid = request.headers.get('X-AppleConnect-PersonId')
+    # Debugging Code
+    if not dsid:
+        dsid = os.environ.get('X-AppleConnect-PersonId')
+    user = common.User.query.filter_by(dsid=dsid).first()
+    """:type: common.User"""
+    if not user:
+        user = common.User(dsid)
+        db.session.add(user)
+        db.session.commit()
+    return user
+
+
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
-@app.route("/mal/")
-@app.route("/mal/<username>")
-def mal_page(username=None):
+@app.route("/mal/link/<username>")
+def link_mal_user(username):
+    user = get_apple_user()
+    if user.mal_user and user.mal_user.username == username:
+        return escape(u"Already linked to {}!".format(repr(user.mal_user)))
+
+    mal.MalUser.query.filter_by(username=username).delete()
+
+    mal_user = mal.MalUser(username, user)
+    db.session.add(user)
+    db.session.add(mal_user)
+    db.session.commit()
+    return escape(u"Linked {} to {}!".format(repr(user), repr(mal_user)))
+
+
+@app.route("/mal/update/<username>")
+def mal_page(username):
     if not username:
         username = 'katzenbaer'
 
