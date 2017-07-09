@@ -2,7 +2,6 @@
 .nav-container {
     width: 100%;
     margin: 0 auto;
-    padding-top: 7px;
     text-align: center;
 }
 
@@ -27,6 +26,8 @@ header {
 }
 
 nav {
+    margin-top: 0px;
+    top: 0;
     width: 100%;
 }
 

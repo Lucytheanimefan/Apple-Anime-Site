@@ -16,7 +16,10 @@
     {% include 'navbar.html' %}
     <div class="main">
         {% block body %}{% endblock %}
+
+        {% include 'footer.html' %}
     </div>
+
     <script type="text/javascript" src="{{ url_for('static', filename='plugins/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='plugins/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='plugins/anime.min.js') }}"></script>

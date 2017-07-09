@@ -1,4 +1,6 @@
-
+body{
+    min-width: 328px;
+}
 
 /* The hero image */
 .hero-image {
@@ -25,6 +27,14 @@
     color: white;
 }
 
+.container{
+    text-align: center;
+}
+
+.intro-signin{
+    padding: 5px;
+}
+
 input{
     height: 42px;
     width: 328px;
@@ -37,9 +47,15 @@ input{
 }
 button:focus {outline:none;}
 #submit{
-    margin-left: -43px;
+    margin-top: -35px;
+    margin-left: 120px;
     background: transparent;
     border: none !important;
+    position: absolute;
+}
+
+form{
+    position: relative;
 }
 .icon {
     font-family: "shared-icons";
@@ -87,7 +103,7 @@ button:focus {outline:none;}
     margin: 0 auto;
 }
 
-@media only screen and (max-device-width:736px) {
+@media only screen and (max-width:736px) {
     .apps,.app-icons-2x {
         display: none;
     }
@@ -101,12 +117,13 @@ button:focus {outline:none;}
         background-repeat: no-repeat;
         background-position: center;
         width: 290px;
-        height: 137px;
+        min-height: 137px;
         margin: 0 auto;
-        display: block;
+        display: block !important;
     }
 
 }
+
 
 .mobile-icons-1x,
 .mobile-icons-2x {
