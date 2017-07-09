@@ -17,7 +17,7 @@ class MalCoordinator(object):
         :param string username: Given user
 
         :return: Raw JSON.
-        :rtype: list[dict[string, object]]
+        :rtype: list[mal.MalEntry]
         """
         url = 'https://myanimelist.net/animelist/{}/load.json'.format(username)
         r = requests.get(url)

@@ -28,16 +28,30 @@ def mal_page(username=None):
     coordinator = coordinators.MalCoordinator()
     animelist = coordinator.fetch_animelist(username)
 
-    # TODO: Associate entries with user
-
     if not animelist:
         return u"Error while fetching top anime for {}".format(username)
     else:
-        db.session.bulk_save_objects(animelist)
-        db.session.commit()
+        try:
+            mal_user = mal.MalUser.query.filter_by(username=username).first()
+            """:type: mal.MalUser"""
+
+            if mal_user:
+                db.session.query(mal.MalEntry).filter_by(mal_user=mal_user).delete()
+            else:
+                mal_user = mal.MalUser(username)
+                db.session.add(mal_user)
+
+            mal_user.entries.extend(animelist)
+
+            db.session.add(mal_user)
+            db.session.add_all(animelist)
+        finally:
+            db.session.commit()
+
         top_anime = coordinator.filter_top_anime(animelist)
         return render_template("mal_user.html", top_anime = top_anime, username=username)
         #return u"{}'s top anime: {}".format(username, ', '.join(list(top_anime)))
+
 
 @app.route("/credentials", methods=["GET"])
 def get_od_credentials():
