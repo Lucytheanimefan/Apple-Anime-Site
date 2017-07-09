@@ -2,7 +2,7 @@ import logging
 
 import requests
 
-from models import mal
+from models import mal, common
 
 log = logging.getLogger(__name__)
 
@@ -11,20 +11,25 @@ class MalCoordinator(object):
     """
     Coordinator that interfaces with MyAnimeList.net
     """
-    def fetch_animelist(self, username):
+    def fetch_animelist(self, user):
         """
         Fetches the animelist for a given user.
 
-        :param string username: Given user
+        :param common.User user: Given user
 
         :return: Raw JSON.
         :rtype: list[mal.MalEntry]
         """
+        entries = []
+
+        mal_user = user.mal_user
+        if not mal_user:
+            return entries
+
+        username = mal_user.username
         url = 'https://myanimelist.net/animelist/{}/load.json'.format(username)
         r = requests.get(url)
         json_entries = r.json()
-
-        entries = []
 
         if isinstance(json_entries, dict):
             log.error(u"Error while fetching top anime for {}".format(username))

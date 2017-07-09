@@ -59,7 +59,7 @@ def mal_update():
         return u"Please link a MyAnimeList account first."
 
     coordinator = coordinators.MalCoordinator()
-    animelist = coordinator.fetch_animelist(user.mal_user.username)
+    animelist = coordinator.fetch_animelist(user)
 
     if not animelist:
         return u"Error while fetching top anime for {}".format(user.mal_user.username)
