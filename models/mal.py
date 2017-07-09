@@ -11,8 +11,10 @@ class MalUser(db.Model):
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="mal_user")
+    """:type: models.common.User"""
 
     entries = db.relationship("MalEntry", back_populates="mal_user", cascade="all, delete-orphan")
+    """:type: list[models.mal.MalEntry]"""
 
     def __init__(self, username, user):
         self.username = username
@@ -43,6 +45,7 @@ class MalEntry(db.Model):
 
     mal_user_id = db.Column(db.Integer, db.ForeignKey('mal_user.id'))
     mal_user = db.relationship("MalUser", back_populates="entries")
+    """:type: models.mal.MalUser"""
 
     anime_id = db.Column(db.Integer)
     title = db.Column(db.String(80))

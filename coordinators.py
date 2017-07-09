@@ -1,6 +1,7 @@
 import logging
 
 import requests
+
 from models import mal
 
 log = logging.getLogger(__name__)

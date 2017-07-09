@@ -9,6 +9,7 @@ class User(db.Model):
 
     mal_user = db.relationship("MalUser", uselist=False, back_populates="user",
                                cascade="all, delete-orphan")
+    """:type: models.mal.MalUser"""
 
     def __init__(self, dsid):
         self.dsid = dsid

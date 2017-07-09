@@ -1,8 +1,11 @@
 import os
+
 from flask import Flask, render_template, request, escape
+from sqlalchemy import func
+
+import coordinators
 from commons import db
 from models import common, mal
-import coordinators
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/tkatzenbaer'
@@ -48,37 +51,64 @@ def link_mal_user(username):
     return escape(u"Linked {} to {}!".format(repr(user), repr(mal_user)))
 
 
-@app.route("/mal/update/<username>")
-def mal_page(username):
-    if not username:
-        username = 'katzenbaer'
+@app.route("/mal/update")
+def mal_update():
+    user = get_apple_user()
+
+    if not user.mal_user:
+        return u"Please link a MyAnimeList account first."
 
     coordinator = coordinators.MalCoordinator()
-    animelist = coordinator.fetch_animelist(username)
+    animelist = coordinator.fetch_animelist(user.mal_user.username)
 
     if not animelist:
-        return u"Error while fetching top anime for {}".format(username)
+        return u"Error while fetching top anime for {}".format(user.mal_user.username)
     else:
-        try:
-            mal_user = mal.MalUser.query.filter_by(username=username).first()
-            """:type: mal.MalUser"""
+        db.session.query(mal.MalEntry).filter_by(mal_user=user.mal_user).delete()
 
-            if mal_user:
-                db.session.query(mal.MalEntry).filter_by(mal_user=mal_user).delete()
-            else:
-                mal_user = mal.MalUser(username)
-                db.session.add(mal_user)
+        user.mal_user.entries.extend(animelist)
 
-            mal_user.entries.extend(animelist)
+        db.session.add(user.mal_user)
+        db.session.commit()
 
-            db.session.add(mal_user)
-            db.session.add_all(animelist)
-        finally:
-            db.session.commit()
+        return u"Successfully updated entries for {}".format(user.mal_user.username)
 
-        top_anime = coordinator.filter_top_anime(animelist)
-        return render_template("mal_user.html", top_anime = top_anime, username=username)
-        #return u"{}'s top anime: {}".format(username, ', '.join(list(top_anime)))
+
+@app.route("/mal/top-this-season")
+def mal_top_season():
+    sum_watched_episodes = func.sum(mal.MalEntry.watched_episodes).label("sum_watched_ep")
+    subquery = db.session.query(mal.MalEntry.anime_id.label('aid'), sum_watched_episodes)\
+        .group_by(mal.MalEntry.anime_id)\
+        .filter_by(airing_status=mal.MalEntryAiringStatus.airing)\
+        .order_by(sum_watched_episodes.desc()).subquery()
+    subquery = db.session.query(subquery).filter(subquery.c.sum_watched_ep > 0).subquery()
+    subquery = db.session.query(subquery, mal.MalEntry)\
+        .distinct(mal.MalEntry.title)\
+        .join(mal.MalEntry, mal.MalEntry.anime_id == subquery.c.aid)\
+        .order_by(mal.MalEntry.title).subquery()
+    entries = db.session.query(subquery)\
+        .order_by(subquery.c.sum_watched_ep.desc()).all()
+    """:type: list[mal.MalEntry]"""
+
+    if not entries:
+        return u"No records."
+
+    titles = [u"{} - {}".format(e.title, e.sum_watched_ep) for e in entries]
+    return u"Top anime this season @ Apple: {}".format(', '.join(titles))
+
+
+@app.route("/mal/top/<username>")
+def mal_top(username):
+    coordinator = coordinators.MalCoordinator()
+
+    mal_user = mal.MalUser.query.filter_by(username=username).first()
+    """:type: mal.MalUser|None"""
+
+    if not mal_user:
+        return u"No records for {}".format(username)
+
+    top_anime = coordinator.filter_top_anime(mal_user.entries)
+    return render_template("mal_user.html", top_anime = top_anime, username=username)
 
 
 @app.route("/credentials", methods=["GET"])
