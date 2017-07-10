@@ -143,8 +143,6 @@ def footer_pages(footer_category):
 
 if __name__ == "__main__":
     port = os.environ.get("PORT_WEB")
-    print "PORT: "
-    print port
     if port:
         app.run(host='0.0.0.0', port=int(port))
     else:
