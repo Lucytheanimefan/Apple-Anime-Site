@@ -14,6 +14,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/lucyzhang'#tkatzenbaer'
 db.init_app(app)
 
+os.environ["X-AppleConnect-EmailAddress"] = "lucy_zhang@apple.com"
+
 with app.app_context():
     # Extensions like Flask-SQLAlchemy now know what the "current" app
     # is while within this block. Therefore, you can now run........
@@ -121,8 +123,8 @@ def get_od_credentials():
 
 @app.route("/signin", methods=["POST"])
 def signin():
-    username = request.form["malUsername"]#TODO: do something with username
-    return home()
+    username = request.form["malUsername"]
+    return link_mal_user(username)
 
 @app.route("/login")
 def login():
