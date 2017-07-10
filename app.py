@@ -96,10 +96,11 @@ def mal_top_season():
     """:type: list[mal.MalEntry]"""
 
     if not entries:
-        return u"No records."
+        return render_template("top_anime.html")
 
     titles = [u"{} - {}".format(e.title, e.sum_watched_ep) for e in entries]
-    return u"Top anime this season @ Apple: {}".format(', '.join(titles))
+    #return u"Top anime this season @ Apple: {}".format(', '.join(titles))
+    return render_template("top_anime.html", top_anime = titles)
 
 
 @app.route("/mal/top/<username>")
@@ -113,6 +114,8 @@ def mal_top(username):
         return u"No records for {}".format(username)
 
     top_anime = coordinator.filter_top_anime(mal_user.entries)
+    print("TOP ANIME:")
+    print top_anime
     return render_template("mal_user.html", top_anime = top_anime, username=username)
 
 

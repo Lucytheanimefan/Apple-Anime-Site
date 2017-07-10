@@ -11,6 +11,10 @@ h2{
     font-weight: 300;
 }
 
+.container{
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
 /* The hero image */
 .hero-image {
     /* The image used */
