@@ -56,11 +56,14 @@ footer {
     margin: 0;
     padding: 0;
     pointer-events: auto;
+    text-align: center;
 }
 
 #footer {
     padding: 0 22px;
     max-width: 980px;
+    text-align: center;
+    margin: auto;
 }
 
 .ac-gf-footer {

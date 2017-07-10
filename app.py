@@ -11,7 +11,7 @@ from commons import db
 from models import common, mal
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/#tkatzenbaer'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/lucyzhang'#tkatzenbaer'
 db.init_app(app)
 
 with app.app_context():
